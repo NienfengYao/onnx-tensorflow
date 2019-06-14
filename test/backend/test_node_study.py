@@ -391,8 +391,8 @@ class TestNode(unittest.TestCase):
   def test_matmul(self):
     node_def = helper.make_node("MatMul", ["X", "Y"], ["Z"])
     # 2d 
-    x = self._get_rnd([2, 3, 4])
-    y = self._get_rnd([2, 4, 3])
+    x = self._get_rnd([3, 4])
+    y = self._get_rnd([4, 3])
     output = run_node(node_def, [x, y])
     np.testing.assert_almost_equal(output["Z"], np.matmul(x, y))
 
